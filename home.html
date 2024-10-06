@@ -1,0 +1,139 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Management System</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            <img id="userAvatar" src="OIP.jpg" alt="User Avatar">
+            <h1 id="userName">SUJAL KUMAR</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="family-members">
+            <h2>Family Members</h2>
+            <ul id="family-member-list">
+                <!-- Family members will be dynamically added here -->
+            </ul>
+            <button id="addMemberBtn" class="add-btn">Add Family Member</button>
+        </section>
+
+        <section class="family-details">
+            <h2>Family Member Details</h2>
+            <div id="family-details-container">
+                <!-- Family member details will be displayed here -->
+            </div>
+        </section>
+
+        <section class="related-tables">
+            <h2>Related Tables</h2>
+            <ul>
+                <li><button class="related-btn" onclick="fetchHealthRecords()">Health Records</button></li>
+                <li><button class="related-btn" onclick="fetchMedications()">Medications</button></li>
+                <li><button class="related-btn" onclick="fetchAppointments()">Appointments</button></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Add footer content if needed -->
+    </footer>
+
+    <!-- Modal for adding/updating family member -->
+    <div id="memberModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="addMemberForm">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required><br><br>
+                
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required><br><br>
+                
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br><br>
+                
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select><br><br>
+                
+                <label for="relationship">Relationship:</label>
+                <input type="text" id="relationship" name="relationship" required><br><br>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+        <!-- Modal for /updating Health Records -->
+        <div id="healthRecordModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="addHealthRecordForm">
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" name="description" required><br><br>
+                    
+                    <label for="Record date">Record Date:</label>
+                    <input type="date" id="record_date" name="record_date" required><br><br>
+                    
+                    <label for="Record type">Record Type:</label>
+                    <input type="text" id="record_type" name="record_type" required><br><br>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        
+        
+        <!-- Modal for /updating medication Records -->
+        <div id="medicationModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="addMemberForm">
+                    <label for="medication name">Medication Name:</label>
+                    <input type="text" id="medication_name" name="medication_name" required><br><br>
+                    
+                    <label for="dosage">Dosage:</label>
+                    <input type="text" id="dosage" name="dosage" required><br><br>
+                               
+                    <label for="frequency">Frequency:</label>
+                    <input type="text" id="frequency" name="frequency" required><br><br>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Modal for /updating appointment Records -->
+        <div id="appointmentModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="addMemberForm">
+                    
+                    <label for="dob">Appointment Date:</label>
+                    <input type="date" id="appointment_date" name="appointment_date" required><br><br>
+                    
+                    <label for="provider name">Provider Name:</label>
+                    <input type="text" id="provider_name" name="provider_name" required><br><br>
+                    
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" id="purpose" name="purpose" required><br><br>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+
+    <script src="home.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
